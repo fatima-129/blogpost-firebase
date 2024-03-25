@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-hot-toast";
 import useItem from "./hooks/useItem";
 
 const Admin = () => {
@@ -18,7 +19,13 @@ const Admin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     saveItemToFirebase(item);
+    toast.promise(saveItemToFirebase(item), {
+      loading: "Saving Item to firebase...",
+      success: <b>Item saved!</b>,
+      error: <b>Could not save the item.</b>,
+    });
   };
+
   return (
     <form onSubmit={handleSubmit}>
       <input
