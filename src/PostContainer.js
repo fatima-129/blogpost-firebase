@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import "./PostCard.css";
-
 import useItem from "./hooks/useItem";
-
 const PostCard = ({ title, price, imageUrl, description }) => {
   return (
     <div className="card">

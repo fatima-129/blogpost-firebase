@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { toast } from "react-hot-toast";
 import useItem from "./hooks/useItem";
-
 const Admin = () => {
   const [item, setItem] = useState({
     title: "",
@@ -25,7 +24,6 @@ const Admin = () => {
       error: <b>Could not save the item.</b>,
     });
   };
-
   return (
     <form onSubmit={handleSubmit}>
       <input
